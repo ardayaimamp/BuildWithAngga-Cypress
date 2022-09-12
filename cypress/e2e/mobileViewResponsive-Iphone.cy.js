@@ -116,12 +116,7 @@ describe('Test Website Build With Angga view mobile responsive iphone', () => {
 
         cy.get(".course-detail").should("be.visible")
         cy.contains("Product Management: Mastering Product").should("be.visible") //.click()
-        cy.get("a[href*='product-management']")
         // cy.url().should("eq", "https://buildwithangga.com/bootcamp/product-management-mastering-product");
-
-        // cy.location("pathname").should("eq", "bootcamp/product-management-mastering-product") ==> error pathname
-       
-
 
       })
       
@@ -154,6 +149,10 @@ describe('Test Website Build With Angga view mobile responsive iphone', () => {
       });
       
     })
+
+    it('Cek link', () => {
+        
+    });
 
 
 
