@@ -7,9 +7,148 @@ describe('Test Website Build With Angga view mobile responsive ipad', () => {
     cy.location('protocol').should('contains', 'https')
     cy.location('hostname').should('eq', 'buildwithangga.com')
     
-    })
+    }) 
     
-    context("Responsive mobile Section Main : Ipad Mini", () => {
+  
+    context("Tampilan Navbar Header Logo BWA", () => {
+      
+      it('Cek Header Item Logo BWA', () => {
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/logo_bwa_new.svg"]').should("be.visible")
+       
+      });
+    })
+
+    context("Tampilan Navbar Header Buger Flash Sale", () => {
+
+      it('Cek Header Burger Menu : Flash Sale', () => {
+        cy.get('button[class="navbar-toggler"]').click()
+
+        cy.get(':nth-child(2) > .nav-link').should("be.visible")
+        cy.get('a[href="https://buildwithangga.com/sale"]').contains("Flash Sale")
+
+      })
+    })
+
+    context("Tampilan Navbar Header Buger For Students", () => {
+
+      it('Dropdown Menu : For Student', () => {
+        cy.get('button[class="navbar-toggler"]').click()
+
+        cy.get('#navbarDropdown').contains("For Students").should("be.visible").click()
+        
+        //Kelas Online
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_all_course.svg"]').should("be.visible")
+        cy.get('.title').contains('Kelas Online').should('be.visible')
+        cy.get('.subtitle').contains('Belajar tanpa batasan waktu').should('be.visible')
+
+        cy.get('.stretched-link').should('have.class', 'stretched-link').and('have.attr', 'href').and('include', 'https://buildwithangga.com/kelas')     
+        //cy.get('a[href="https://buildwithangga.com/kelas"]')
+
+        //Mentor Kami
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_mentor.svg"]').should("be.visible")
+        cy.get('.title').contains('Mentor Kami').should('be.visible')
+        cy.get('.subtitle').contains('Terpercaya berpengalaman').should('be.visible')
+        
+        // cy.get('.stretched-link').should('have.class', 'stretched-link').and('have.attr', 'href').and('include', 'https://buildwithangga.com/mentor')
+        cy.get('a[href="https://buildwithangga.com/mentor"]')
+
+        //Bootcamp
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_video.svg"]').should("be.visible")
+        cy.get('.title').contains('Bootcamp').should('be.visible')
+        cy.get('.subtitle').contains('Belajar secara live-streaming').should('be.visible')
+        
+        // cy.get('.stretched-link').should('have.class', 'stretched-link').and('have.attr', 'href').and('include', 'https://buildwithangga.com/bootcamp')
+        cy.get('a[href="https://buildwithangga.com/bootcamp"]')
+
+        //HandBook
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_modules.svg"]').should("be.visible")
+        cy.get('.title').contains('HandBook').should('be.visible')
+        cy.get('.subtitle').contains('Panduan karir bidang IT').should('be.visible')
+        
+        // cy.get('.stretched-link').should('have.class', 'stretched-link').and('have.attr', 'href').and('include', 'https://buildwithangga.com/handbook')
+        cy.get('a[href="https://buildwithangga.com/handbook"]')
+      
+        //Alur Belajar
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_flag.svg"]').should("be.visible")
+        cy.get('.title').contains('Alur Belajar').should('be.visible')
+        cy.get('.subtitle').contains('Arahan belajar oleh mentor').should('be.visible')
+        
+        // cy.get('.stretched-link').should('have.class', 'stretched-link').and('have.attr', 'href').and('include', 'https://buildwithangga.com/journey')
+        cy.get('a[href="https://buildwithangga.com/journey"]')
+
+        //Big Big Reward
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_showcase.svg"]').should("be.visible")
+        cy.get('.title').contains('Big Big Rewards').should('be.visible')
+        cy.get('.subtitle').contains('Terima kasih dari kami').should('be.visible')
+        
+        // cy.get('.stretched-link').should('have.class', 'stretched-link').and('have.attr', 'href').and('include', 'https://buildwithangga.com/rewards')
+        cy.get('a[href="https://buildwithangga.com/rewards"]')
+      })
+    })
+
+    context("Tampilan Navbar Header Buger Flash Sale", () => {
+
+      it('Cek Header Burger Menu : For Corporate', () => {
+        cy.get('button[class="navbar-toggler"]').click()
+
+        cy.get('#dropdownMenuLink').contains("For Corporate").should("be.visible").click()
+
+        //Corporate Training
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_video.svg"]').should("be.visible")
+        cy.get('.title').contains('Corporate Training').should('be.visible')
+        cy.get('.subtitle').contains('Perkuat tim design & IT dengan kami').should('be.visible')
+        cy.get('a[href="https://joinbwa.com/corptraining"]')
+
+        //Hiring Alumni
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_showcase.svg"]').should("be.visible")
+        cy.get('.title').contains('Hiring Alumni').should('be.visible')
+        cy.get('.subtitle').contains('Dapatkan talent terbaik dari kami').should('be.visible')
+        cy.get('a[href="https://buildwithangga.com/showcase"]')
+
+        //Open Job
+        cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_project.svg"]').should("be.visible")
+        cy.get('.title').contains('Open Job').should('be.visible')
+        cy.get('.subtitle').contains('Posting loker pada website kami').should('be.visible')
+        cy.get('a[href="https://joinbwa.com/openjob"]')
+
+         //Build Your Project
+         cy.get('img[src="https://buildwithangga.com/themes/front/images/ic_appcode.svg"]').should("be.visible")
+         cy.get('.title').contains('Build Your Project').should('be.visible')
+         cy.get('.subtitle').contains('Hire studio kami untuk projek Anda').should('be.visible')
+         cy.get('a[href="https://joinbwa.com/hirebwa"]')
+
+      })
+    })
+
+    context("Tampilan Navbar Header Daftar", () => {
+      it('Button Menu Daftar & Masuk BWA', () => {
+      cy.get('button[class="navbar-toggler"]').click()
+            
+      //Daftar
+      const daftar = cy.get('a[class="btn btn-primary btn-masuk "]')
+      daftar.should("have.attr", "href", "https://buildwithangga.com/start")
+      daftar.contains('Daftar')
+      daftar.should("have.css", "color", "rgb(255, 255, 255)")
+      daftar.should("have.css", "background-color", "rgb(36, 71, 249)");
+      
+      const masuk = cy.get('a[class="btn btn-secondary btn-daftar d-xl-none"]')
+      masuk.should("have.attr", "href", "https://class.buildwithangga.com")
+      masuk.contains('Masuk')
+      masuk.should("have.css", "color", "rgb(52, 54, 74)")
+
+      const logoSearch = cy.get('.expanding-search-icon > .search')
+      logoSearch.should('have.attr', 'src', 'https://buildwithangga.com/themes/front/images/ic_search.svg')
+      logoSearch.click()
+      
+      const search = cy.get('#searchBarModule')
+      search.should('have.attr', 'type', 'text')
+      search.type('Bootcamp')
+      
+
+      });
+    })
+   
+    context("Tampilan mobile Section Main : Ipad Mini", () => {
       
       it('Cek Section Main Primary', () => {
          
@@ -90,6 +229,7 @@ describe('Test Website Build With Angga view mobile responsive ipad', () => {
       it('Cek Item Footer Logo', () => {
         cy.get('img[src="https://buildwithangga.com/themes/front/images/logo_bwa_new.svg"]').should("be.visible")
         cy.contains("Website untuk belajar design dan code dari mentor yang sangat berpengalaman di bidangnya masing-masing.")
+
         
       });
 
