@@ -308,13 +308,15 @@ describe('Test Website Build With Angga view mobile responsive ipad', () => {
 
       });
 
-      it('Cek Link Footer "Company" ', () => {
+      it.only('Cek Link Footer "Company" ', () => {
         cy.get(".header-category").contains("Company").should("be.visible")
           
         cy.get("a[href='https://buildwithangga.com/about-us']").contains("About").should("be.visible")
         cy.get("a[href='https://buildwithangga.com/about-us/timeline']").contains("Our Timeline").should("be.visible")
         cy.get("a[href='https://buildwithangga.com/contact-us']").contains("Contact").should("be.visible")
         cy.get("a[href='https://buildwithangga.com/careers']").contains("Careers").should("be.visible")
+        cy.get("a[href='https://www.instagram.com/buildwithangga/']").contains("Instagram").should("be.visible")
+        cy.get("a[href='https://www.tiktok.com/@buildwithangga']").contains("TikTok").should("be.visible")
         
       });
         
