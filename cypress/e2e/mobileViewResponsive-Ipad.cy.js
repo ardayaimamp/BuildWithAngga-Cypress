@@ -166,15 +166,28 @@ describe('Test Website Build With Angga view mobile responsive ipad', () => {
         cy.get(".course-card").should("be.visible")
         cy.get("img[class='thumbnail-bootcamp']").should("be.visible")
 
+         //Python data science
+        cy.get('img[src="https://buildwithangga.com/storage/assets/images/cover_bootcamp/202209131201-compressorpng-Thumbnail Bootcamp Vembry.png"]').should("be.visible")
+        cy.get(".course-name").should("be.visible").contains("Python Data Science")
+        cy.get("a[href='https://buildwithangga.com/bootcamp/python-data-science']")
+
+        //Product Management
+        cy.get('img[src="https://buildwithangga.com/storage/assets/images/cover_bootcamp/202208221354-Thumbnail One Day Class Mentor Jesslyn.png"]').should("be.visible") 
         cy.get(".course-name").should("be.visible").contains("Product Management: Mastering Product")
         cy.get("a[href='https://buildwithangga.com/bootcamp/product-management-mastering-product']")
-
+        
+        //Designer with figma 2022
+        cy.get('img[src="https://buildwithangga.com/storage/assets/images/cover_bootcamp/202208151052-Thumbnail Bootcamp Mentor Herdetya-min.png"]').should("be.visible") 
         cy.get(".course-name").should("be.visible").contains("UI/UX Designer with Figma 2022: E-Wallet App")
         cy.get("a[href='https://buildwithangga.com/bootcamp/uiux-designer-with-figma-2022-e-wallet-app']")
        
+        //Flutter Development : Food Shop App
+        cy.get('img[src="https://buildwithangga.com/storage/assets/images/cover_bootcamp/202208101249-Thumbnail Flutter Mobile Development Food Shop App-min.png"]').should("be.visible") 
         cy.get(".course-name").should("be.visible").contains("Flutter Mobile Development: Food Shop App")
         cy.get("a[href='https://buildwithangga.com/bootcamp/flutter-mobile-development-food-shop-app']")
         
+        //Fullstack Javascript Developer (MERN)
+        cy.get('img[src="https://buildwithangga.com/storage/assets/images/cover_bootcamp/202208031014-Thumbnail Bootcamp MERN-min.png"]').should("be.visible") 
         cy.get(".course-name").should("be.visible").contains("Full-Stack JavaScript Developer (MERN)")
         cy.get("a[href='https://buildwithangga.com/bootcamp/full-stack-javascript-developer-mern']")
 
